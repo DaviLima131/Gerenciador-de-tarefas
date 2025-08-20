@@ -25,13 +25,13 @@
                 <div class="col-md-4">
                     <!-- Formulário -->
                     <div class="card card-body">
-                        <form action="#" method="POST">
-                            <div class="form-geoup">
-                                <input type="text" name="título" class="form-control"
+                        <form action="save.php" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="title" class="form-control"
                                     placeholder="Titulo da tarefa" autofocus>
                             </div>
                             <div class="form-group">
-                                <textarea name="descricao" rows="2" class="form-control"
+                                <textarea name="description" rows="2" class="form-control"
                                     placeholder="Descriçã">
                                 </textarea>
                             </div>
@@ -48,7 +48,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Titulo</th>
-                                <th>descrição</th>
+                                 <th>descrição</th>
                                 <th>Criado em </th>
                                 <th>Ação</th>
                             </tr>

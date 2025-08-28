@@ -17,6 +17,11 @@
         <nav class="navbar navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="index.php">Crud PHP </a>
+                <form action="login.php" method="GET" class="d-inline">
+                    <button type="submit" class="btn btn-secondary">
+                        <i class="fas fa-sign-out-alt"></i> Logout          
+                    </button>
+                </form>
             </div>
         </nav>
         <main class="container p-4">
@@ -67,8 +72,8 @@
                                     <tr>
                                         <td><?php echo $row['id']; ?></td>
                                         <td><?php echo $row['title']; ?></td>
-                                        <td><?php echo $row['description']; ?></td>
-                                        <td><?=date("d/m/Y", strtotime($row['created_at'])); ?></td>
+                                        <td><?= substr($row['description'],0, 20) . '...' ?></td>
+                                        <td><?= date("d/m/Y", strtotime($row['created_at'])); ?></td>
                                         <td><a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-secondary">
                                                 <i class="fas fa-marker"></i>
                                             </a>

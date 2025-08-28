@@ -6,7 +6,7 @@
         echo "ID da tarefa não fornecido.";
         exit();
     }
-
+                                                                 
     try {
         $sql = "SELECT * FROM crud_php WHERE id = ?";
         $stmt = $conn->prepare($sql);

@@ -10,7 +10,7 @@ try {
         if ($email && $password) {
         $sql = "SELECT id, email, password FROM users WHERE email = ?";
         $stmt = $conn->prepare($sql);  
-
+                                                  
         if ($stmt) {
             $stmt->bind_param("s", $email);
             $stmt->execute();

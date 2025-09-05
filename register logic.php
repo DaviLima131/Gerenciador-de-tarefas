@@ -4,9 +4,9 @@ require_once 'conn.php';
 
 try {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = isset($_POST['email']) ? $_POST['email'] : null;
-        $password = isset($_POST['password']) ? $_POST['password'] : null; 
-        $confirm_password = isset($_POST['confirmPassword']) ? $_POST['confirmPassword'] : null;
+        $email = $_POST['email'] ?? null;
+        $password = $_POST['password'] ?? null;
+        $confirm_password = $_POST['confirmPassword'] ?? null;
 
         if ($email && $password && $confirm_password) {
             if ($password !== $confirm_password) {
@@ -26,6 +26,9 @@ try {
                 $stmt->bind_param("ss", $email, $hashedpassword);
 
                 if ($stmt->execute()) {
+                    session_start();
+                    $_SESSION['message'] = "Cadastro realizado com sucesso!";
+                    $_SESSION['message_type'] = "primary";
                     header("Location: login.php");
                     exit();
                 } else {
